@@ -12,7 +12,7 @@ count=$#
 for i in "$@" ; do 
 	response="$(echo "$i" | sed 's|^/\([a-z,A-Z]\)|\1:|' | sed 's|/|\\|g')"
 	response="$(echo "$response" | sed 's/\\/\\\\/g')" #echo -e will try to interpret backslashes
-	[ $count -le 1 ] && echo "$response" || echo -e "$response \c" 
+	[ $count -le 1 ] && echo -e "$response" || echo -e "$response \c" 
 	count=$(( $count - 1 ))
 done
 
