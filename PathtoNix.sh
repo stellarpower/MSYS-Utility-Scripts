@@ -10,7 +10,7 @@
 count=$#
 
 for i in "$@" ; do 
-	response="$(  echo "$1" | sed -r  -e 's/\\/\//g' -e 's/^([^:]+):/\/\1/'  )"
+	response="$(  echo "$i" | sed -r  -e 's/\\/\//g' -e 's/^([^:]+):/\/\1/'  )"
 	[ $count -le 1 ] && echo "$response" || echo -e "$response \c" 
 	count=$(( $count - 1 ))
 done
