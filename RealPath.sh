@@ -29,7 +29,7 @@ a="$1"
 until [ "$a" == '/' ] ; do
 	if isJunction "$a"; then
 		#echo isj
-		target="$(PathtoNix.sh "$(readlink "$a")" )"
+		target="$(PathtoNix.sh "$(ReadLink.sh "$a")" )"
 
 		##echo $suffix
 		response="$target/$suffix"
